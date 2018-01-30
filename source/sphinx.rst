@@ -1,4 +1,4 @@
-sphinx
+Sphinx
 =======
 
 source/index.rst
