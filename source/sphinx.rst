@@ -67,3 +67,10 @@ toctree is a reStructuredText directive, a very versatile piece of markup.
 .. code-block:: none
 
   :ref:`Link title <label-name>`  #不要写定义label-name时前面的_
+
+使用下标
+^^^^^^^^^^
+操作符为 :rolename:`content`
+
+- :durole:`subscript` – 下标
+- :durole:`superscript` – 上标
