@@ -81,3 +81,11 @@ Instllation
 .. image:: _images/rtd-2.png
 
 8. push笔记到Github，ReadtheDocs会自动更新
+
+Q&A
+-----
+构建失败报错
+^^^^^^^^^^^^^^
+**Package inputenc Error: Unicode char(inputenc) not set up for use with LaTeX.**
+
+进入readthedoc的项目-管理-郜婕高级设置，取消"Enable PDF build"
