@@ -13,6 +13,7 @@ Welcome to util-notes's documentation!
    readthedocs
    sphinx
    fiddler
+   ssh
 
 
 
