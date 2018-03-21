@@ -14,6 +14,8 @@ Welcome to util-notes's documentation!
    sphinx
    fiddler
    ssh
+   git
+   ubuntu
 
 
 
