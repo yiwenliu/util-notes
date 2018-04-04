@@ -154,3 +154,15 @@ GLX distinguishes two "states": indirect state（上图） and direct state（�
 .. image:: _images/Linux_graphics_drivers_DRI_early.svg.png
 
 （上图）early Direct Rendering Infrastructure
+
+配置ubuntu使用git
+-------------------
+在windows上要调试程序，在有GPU的ubuntu上运行，两者的代码要同步，借助github
+
+和 :ref:`git for windows <git-win>` 大多的步骤类似，在测试ssh链接前要执行下列步骤：
+
+$ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+
+否则，ssh -T git@github.com时会报错，如下图
+
+.. image:: _images/ubuntu-2.png

@@ -5,6 +5,8 @@ Git
 在windows上会做一些调试代码的工作，然后，要同步到github上去。
 在学习AI时，程序真正的运行都在ubuntu机器上（GPU）
 
+.. _git-win:
+
 git for windows
 ---------------------
 安装

@@ -16,6 +16,10 @@ Welcome to util-notes's documentation!
    ssh
    git
    ubuntu
+   anaconda
+   python3
+   spyder
+   design-pattern
 
 
 
