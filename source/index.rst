@@ -17,7 +17,6 @@ Welcome to util-notes's documentation!
    git
    ubuntu
    anaconda
-   python3
    spyder
    design-pattern
 
