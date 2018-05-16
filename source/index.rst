@@ -15,10 +15,13 @@ Welcome to util-notes's documentation!
    fiddler
    ssh
    git
-   ubuntu
    anaconda
    spyder
    design-pattern
+   my-1st-miner
+   ubuntu/ubuntu
+   ubuntu/package-installation
+   ubuntu/library
 
 
 

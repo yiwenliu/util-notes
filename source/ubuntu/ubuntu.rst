@@ -60,52 +60,13 @@ $sudo service network-manager restart #重启network manager
 
 2. `修改interfaces文件 <https://www.jianshu.com/p/d69a95aa1ed7>`_
 
-.so文件的运行机理
-------------------
-运行mesos时，出现过“cannot find shared object"的错误，这是找不到动态链接库的错误。在安装cuDNN时，也就是几个.so文件。
-
-关于.so，linux中有这么几个点：
-
-1. 动态库加载程序
-
-/lib/ld.so
-
-2. .so默认存放路径
-
- /usr/lib; /lib
-
-3. .so路径环境变量——LD_LIBRARY_PATH
-
-1）在shell中添加
-
-export LD_LIBRARY_PATH=$ LD_LIBRARY_PATH: /usr/local/lib
-
-2）shell启动时默认添加
-
-如果不想每次新启一个shell都设置LD_LIBRARY_PATH，可以编辑~/.bash_profile文件：
-$ vi ~/.bash_profile
-
-添加：
-LD_LIBRARY_PATH=$ LD_LIBRARY_PATH:/usr/local/lib
-export LD_LIBRARY_PATH
-
-4. .so路径配置文件——/etc/ld.so.conf
-
-在/etc/ld.so.conf.d下面添加配置文件*.conf，写一行/usr/local/lib（libc.conf已经存在了），保存过后ldconfig一下，新的 library才能在程序运行时被找到。
-
-5. 寻找.so文件的顺序
-
-LD_LIBRARY_PATH     /etc/ld.so.conf     /usr/lib; /lib
-
-6. 就是不管做了什么关于library的变动后，最好都ldconfig一下，不然会出现一些意想不到的结果。不会花太多的时间，但是会省很多的事。
-
 X window system
 -----------------
 在安装nvidia驱动的过程中，经常会碰到X display, X server, X client等概念，于是就想搞清楚X windows system.
 
 1. X系统有四大组件：
 
-.. image:: _images/ubuntu-1.png
+.. image:: ../_images/ubuntu-1.png
 
 - X server
 
@@ -147,11 +108,11 @@ If client and server are running on the same computer and an accelerated 3D grap
 
 GLX distinguishes two "states": indirect state（上图） and direct state（下图）.
 
-.. image:: _images/Linux_graphics_drivers_Utah_GLX.svg.png
+.. image:: ../_images/Linux_graphics_drivers_Utah_GLX.svg.png
 
 （上图）Indirect rendering over GLX, using Utah GLX
 
-.. image:: _images/Linux_graphics_drivers_DRI_early.svg.png
+.. image:: ../_images/Linux_graphics_drivers_DRI_early.svg.png
 
 （上图）early Direct Rendering Infrastructure
 
@@ -165,4 +126,4 @@ $ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
 否则，ssh -T git@github.com时会报错，如下图
 
-.. image:: _images/ubuntu-2.png
+.. image:: ../_images/ubuntu-2.png
