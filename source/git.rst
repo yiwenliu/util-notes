@@ -62,6 +62,24 @@ $git remote add命令来手工添加
 3）查看远程仓库的信息可以使用
 $git remote show <标识符>
 
+工作树
+---------
+将.git目录(本地仓库)的父目录中的内容称为“附属于该仓库的工作树”。
+
+add&commit
+------------
+git add和git commit的实际作用是和Git的结构设计紧密相关，详见廖雪峰的工作区和暂存区
+
+.. image:: _images/git-add.png
+
+.. image:: _images/git-commit.png
+
+这篇文章解答了我的几个疑惑：
+
+1. 只是修改的文件，也需要先add，再commit,而不是可以直接commit
+2. 可以执行多个add，最后执行一个commit
+3. add和commit的操作都是针对本地git仓库的
+
 git管理的文件的状态
 ---------------------
 从来没有add/commit的文件：Untracked files
