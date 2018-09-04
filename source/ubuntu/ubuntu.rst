@@ -4,6 +4,14 @@ Install Ubuntu 16.04 LTS
 --------------------------
 https://www.techonthenet.com/linux/sysadmin/ubuntu/install_16_04.php
 
+多显卡矿机安装ubuntu
+---------------------
+在一天6显卡的矿机上运行windows+nicehash非常不稳定，经常死机，只能试试ubuntu+zcash。
+
+用ubuntu16安装盘，在开机的黑白界面选择“install ubuntu"后，进不去安装系统的图形界面。
+
+用ubuntu18试试，可以安装。
+
 在登录界面无法进入桌面
 ------------------------
 20180321，配有GPU的机器被人异常关机后，重新开机，在登录界面循环，无法进入系统桌面(login loop)
