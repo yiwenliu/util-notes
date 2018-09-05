@@ -22,6 +22,7 @@ Welcome to util-notes's documentation!
    ubuntu/ubuntu
    ubuntu/package-installation
    ubuntu/library
+   ubuntu/multi-gpu
 
 
 

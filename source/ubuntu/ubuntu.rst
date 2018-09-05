@@ -76,21 +76,33 @@ X window system
 
 .. image:: ../_images/ubuntu-1.png
 
-- X server
+X server
+^^^^^^^^^^^^^^^^^^^
 
-Xwindow 系统服务器端，通过驱动程序（硬件规范）来管理硬件资源。那么，在安装有nvidia GPU的机器上直接操作的话，GPU就属于X server了吧？注意，如果通过putty连接时使用的是ssh，而不是X windows系统 
+Xwindow 系统服务器端，通过驱动程序（硬件规范）来管理硬件资源，那么 X Server 管理的设备主要有哪些呢？其实与输入/输出有关喔！包括键盘、鼠标、手写板、显示器 (monitor) 、萤幕解析度与色彩深度、显卡 (包含驱动程序) 与显示的字型等等，都是 X Server 管理的。
 
-- X client
-- X Window Manager
+ X Server 还有一个重要的工作，那就是将来自输入装置 (如键盘、鼠标等) 的动作告知 X Client， 但是 X Server 本身并不知道周边设备这些动作会造成什么显示上的效果， 因此 X Server 会将周边设备的这些动作行为告知 X Client ，让 X Client 去伤脑筋。
 
-Window Manager 是一种特殊的 Xclient,用于控制窗口程序的位置和外观，常说的GNOME, XFEC桌面就属于“窗口管理员”。使用窗口管理器时，Xserver 并不直接与其它 Xclient 通信，而是通过 WM 中转，当一些消息被定义为 WM 指令时，它们会被拦截。例如 Alt+F4 关闭窗口、拖动标题栏……
+注意，如果通过putty连接时使用的是ssh，而不是X windows系统 
 
-- Display Manager
+X client
+^^^^^^^^^^^^^^^^^^^
+登录ubuntu后，在其桌面上使用的openoffice, firefox, 图形化的管理界面都是X Client软件。由ubuntu的桌面环境来提供。我们也称呼 X Client 为 X Application (X 应用程序)。
+
+桌面环境的重要组成部分——X Window Manager，一个特殊的 X Client ，负责管理上述所有的 X client 软件。
+
+X Window Manager
+^^^^^^^^^^^^^^^^^^^
+Window Manager 是一种特殊的 Xclient,用于控制窗口程序的位置和外观，常说的GNOME, XFEC桌面就属于“窗口管理员”。使用窗口管理器时，Xserver 并不直接与其它 Xclient 通信，而是通过 WM 中转，当一些消息被定义为 WM 指令时，它们会被拦截。例如 在ubuntu桌面上打开了数个窗口（x client程序），用户点击了一下鼠标，X server捕捉到这个输入，把这个信号传给windows manager，由其判断，哪个是当前窗口，再把这个信号传给对应的X client程序，再有X client程序决定在当前位置点击鼠标是什么意义并产生绘图的数据，经由windows manager传递给X server来显示。
+
+Display Manager
+^^^^^^^^^^^^^^^^^^^
 
 2. 这四个组件的工作流程可以参见 
 
 - `x server&x client <https://i.linuxtoy.org/docs/guide/ch19s03.html>`_ 
 - `x window manager <https://i.linuxtoy.org/docs/guide/ch19s04.html>`_
+-  `理解 Xwindow <http://wiki.ubuntu.org.cn/%E7%90%86%E8%A7%A3_Xwindow>`_
 
 渲染的概念
 ------------

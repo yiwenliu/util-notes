@@ -24,9 +24,12 @@ Mining Software and Platform
 
 Mining Zcash
 ---------------
-Reference
-^^^^^^^^^^
-主要的两个参考链接是
+cuda版本
+^^^^^^^^^^^
+只能用cuda8
+
+安装步骤的参考链接
+^^^^^^^^^^^^^^^^^^^^^^^
 
 - `Equihash miner for NiceHash on Github <https://github.com/nicehash/nheqminer>`_
 - `Running equihash algorithm on NiceHash on Ubuntu <https://steemit.com/mining/@deadums/running-equihash-algorithm-on-nicehash-on-ubuntu>`_
@@ -78,10 +81,12 @@ Install nheqminer
 
 	$cmake -DCUDA_CUDART_LIBRARY=/usr/local/cuda/lib64/libcudart.so ../nheqminer
 
+3. 如果用cuda9.2，在执行最后一步make时，会报错“device_functions.h文件找不到”，直接注释掉
+
 Run NiceHash
 ^^^^^^^^^^^^^^
 .. code-block:: none
 	:linenos:
 
-	$cd ~/zcash/nicehash
+	#在build目录下执行
 	$./nheqminer -l equihash.hk.nicehash.com:3357 -u YOUR_BTC_ADDRESS_HERE.worker_name -cd 0 -t 6
