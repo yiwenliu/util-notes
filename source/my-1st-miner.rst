@@ -26,7 +26,7 @@ Mining Zcash
 ---------------
 cuda版本
 ^^^^^^^^^^^
-只能用cuda8
+只能用cuda8+gcc5.4
 
 安装步骤的参考链接
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -81,7 +81,9 @@ Install nheqminer
 
 	$cmake -DCUDA_CUDART_LIBRARY=/usr/local/cuda/lib64/libcudart.so ../nheqminer
 
-3. 如果用cuda9.2，在执行最后一步make时，会报错“device_functions.h文件找不到”，直接注释掉
+3. 如果在执行最后一步make时报错,“device_functions_decls.h文件找不到”，可能是因为在安装cuda时，没有设置一个环境变量CUDA_HOME造成的。
+
+(网上有一个解决方案是找到报错的文件，把include语句注释掉。如此，虽然能通过make，但是在"run nicehash" on gpu时，会报错"insufficient cuda driver...")
 
 Run NiceHash
 ^^^^^^^^^^^^^^
