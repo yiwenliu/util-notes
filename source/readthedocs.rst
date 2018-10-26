@@ -9,7 +9,8 @@ Instllation
 ^^^^^^^^^^^
 参考了https://www.xncoding.com/2017/01/22/fullstack/readthedoc.html中的安装命令。
 
-虽然是在windows+Anaconda环境中安装sphinx，但是仍然建议使用$pip install，而不是$conda install
+1. 虽然是在windows+Anaconda环境中安装sphinx，但是仍然建议使用$pip install，而不是$conda install。
+2. 在anaconda中创建并激活一个sphinx的虚拟环境后再安装
 
 工作流程
 ----------
