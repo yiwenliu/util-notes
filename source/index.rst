@@ -23,6 +23,7 @@ Welcome to util-notes's documentation!
    ubuntu/package-installation
    ubuntu/library
    ubuntu/multi-gpu
+   web/rest
 
 
 
