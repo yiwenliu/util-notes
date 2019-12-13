@@ -23,6 +23,11 @@ Welcome to util-notes's documentation!
    ubuntu/package-installation
    ubuntu/library
    ubuntu/multi-gpu
+   web/rest
+   web/session
+   web/安全传输.rst
+   web/api.rst
+   docker/install.rst
 
 
 

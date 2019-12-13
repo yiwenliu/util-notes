@@ -79,6 +79,10 @@ git add和git commit的实际作用是和Git的结构设计紧密相关，详见
 1. 只是修改的文件，也需要先add，再commit,而不是可以直接commit
 2. 可以执行多个add，最后执行一个commit
 3. add和commit的操作都是针对本地git仓库的
+4. 工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
+5. Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。
+6. 暂存区是Git非常重要的概念，弄明白了暂存区，就弄明白了Git的很多操作到底干了什么。
+7. commit后“暂存区”就空了
 
 git管理的文件的状态
 ---------------------
@@ -89,6 +93,17 @@ add后：Changes to be committed
 commit后：nothing to commit, working tree clean
 
 commit后又修改的：changes not staged for commit
+
+撤销修改
+-----------
+参考了https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374831943254ee90db11b13d4ba9a73b9047f4fb968d000
+
+1. 修改后没有执行add，使用命令把工作目录的修改的文件还原。
+
+$ git checkout -- readme.txt
+
+2. 修改后执行了add
+
 
 从远程仓库同步代码
 ------------------

@@ -1,0 +1,11 @@
+（web)数字签名和数字证书
+============================
+
+http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html
+
+基本概念
+----------
+密钥（secret key）——秘密的钥匙，是对称加密算法（Symmetric encryption）中的概念
+
+- 私钥（private key）——私有的钥匙；
+- 公钥（public key）——公开的钥匙。
