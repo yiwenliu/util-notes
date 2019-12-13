@@ -124,6 +124,8 @@ PULLis a high-level request that runs ‘fetch’ then a ‘merge’ by default,
 
 The above will merge the remote “master” branch into the local “localBranch”.
 
+如果pull时，merge出错的解决办法请参考：https://help.github.com/cn/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-using-the-command-line#competing-line-change-merge-conflicts
+
 fetch
 ^^^^^^^
 $ git fetch [remote-name][分支名]
@@ -131,6 +133,7 @@ $ git fetch [remote-name][分支名]
 1. 执行这个命令时要注意，本地哪里来的remote-name记录，途径：
 
   1）$git remote add手工添加
+
   2）之前执行过$git clone，自动取名的
 
 2. 这个命令执行完成后，它们将被保存在本地的 "remote-name /分支名" 分支，
