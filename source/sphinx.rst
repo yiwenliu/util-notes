@@ -10,6 +10,10 @@ the index document is the top node of the "content tree",The main function of th
 
 directives
 ------------
+参考链接
+^^^^^^^^^^
+https://xinntao.github.io/records/rst_examples.html#id11
+
 Intro
 ^^^^^^^^
 Directives can have arguments, options and content.
@@ -60,6 +64,13 @@ toctree is a reStructuredText directive, a very versatile piece of markup.
                        #必须空行
   标题1
 
+插入注解
+^^^^^^^^^^
+.. code-block:: none
+
+  .. note::
+    xxxxxxxxxx
+
 第2步，引用label
 
 在需要链接的地方输入
@@ -70,7 +81,9 @@ toctree is a reStructuredText directive, a very versatile piece of markup.
 
 使用下标
 ^^^^^^^^^^
-操作符为 :rolename:`content`
+.. code-block:: none
 
-- :durole:`subscript` – 下标
-- :durole:`superscript` – 上标
+  操作符为 :rolename:`content`
+
+  - :durole:`subscript` – 下标
+  - :durole:`superscript` – 上标

@@ -15,8 +15,6 @@ Welcome to util-notes's documentation!
    fiddler
    ssh
    git
-   anaconda
-   spyder
    design-pattern
    my-1st-miner
    ubuntu/ubuntu
@@ -28,6 +26,7 @@ Welcome to util-notes's documentation!
    web/session
    web/安全传输.rst
    web/api.rst
+   web/http_proxy.rst
    docker/install.rst
 
 

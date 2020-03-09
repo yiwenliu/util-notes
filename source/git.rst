@@ -31,6 +31,10 @@ $eval $(ssh-agent -s)
 
 .. image:: _images/git-3.png
 
+添加远程仓库
+^^^^^^^^^^^^^
+使用git add remote origin xxx时，使用github上仓库的SSH地址，而不是HTTPS地址。
+
 配置文件不受git管理
 --------------------
 1. 下载python.gitignore模板, `link <https://github.com/yiwenliu/gitignore/blob/master/Python.gitignore>`_
