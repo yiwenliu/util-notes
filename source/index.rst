@@ -24,10 +24,13 @@ Welcome to util-notes's documentation!
    web/rest
    web/drupal-restful
    web/session
-   web/安全传输.rst
-   web/api.rst
-   web/http_proxy.rst
-   docker/install.rst
+   web/安全传输
+   web/api
+   web/http_proxy
+   web/nginx
+   docker/install
+   centos/module-install
+   centos/run_background
 
 
 

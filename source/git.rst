@@ -33,7 +33,15 @@ $eval $(ssh-agent -s)
 
 添加远程仓库
 ^^^^^^^^^^^^^
-使用git add remote origin xxx时，使用github上仓库的SSH地址，而不是HTTPS地址。
+使用git  remote add origin xxx时，使用github上仓库的SSH地址，而不是HTTPS地址。
+
+修改远程仓库
+^^^^^^^^^^^^^
+.. code-block:: none
+	:linenos:
+
+	$git remote remove origin #首先删除原来的
+	$git remote add xxx
 
 配置文件不受git管理
 --------------------
