@@ -26,7 +26,6 @@ Welcome to util-notes's documentation!
    web/session
    web/安全传输
    web/api
-   web/http_proxy
    web/nginx
    docker/install
    centos/module-install

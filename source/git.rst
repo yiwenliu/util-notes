@@ -31,9 +31,16 @@ $eval $(ssh-agent -s)
 
 .. image:: _images/git-3.png
 
+远程仓库
+----------------------------
+
 添加远程仓库
-^^^^^^^^^^^^^
-使用git  remote add origin xxx时，使用github上仓库的SSH地址，而不是HTTPS地址。
+^^^^^^^^^^^^^^^^
+在本地仓库（.git目录）中可以记录有多个远程仓库
+
+$git clone 仓库地址  # 被克隆的那个仓库自动记录为远程仓库，并且取名为origin
+
+$git  remote add 仓库标识 仓库地址  # 使用github上仓库的SSH地址，而不是HTTPS地址。
 
 修改远程仓库
 ^^^^^^^^^^^^^
@@ -43,43 +50,34 @@ $eval $(ssh-agent -s)
 	$git remote remove origin #首先删除原来的
 	$git remote add xxx
 
-配置文件不受git管理
---------------------
-1. 下载python.gitignore模板, `link <https://github.com/yiwenliu/gitignore/blob/master/Python.gitignore>`_
-2. 下载并重命名为.gitignore到.git/同级目录下
-3. 编辑.gitignore
+查看远程仓库
+^^^^^^^^^^^^^^^
+$git remote -v
 
-本地仓库和远程仓库
+$git remote show <标识符>   # 查看远程仓库的信息可以使用
+
+
+
+本地仓库
 --------------------
 1. 在本地提及仓库，就是指.git目录
 
-2. 在本地仓库（.git目录）中可以记录有多个远程仓库
+2. 依然无法显示新添加的远程主机的分支，仍然只能显示标识符为origin的远程主机的分支
 
-3. 每一个远程仓库都有一个“标识符”
+$git branch -a
 
-4. 在执行git clone命令后，被克隆的那个仓库自动记录为远程仓库，并且取名为origin
 
-5. 其他非clone源的远程仓库，也能添加为本地的远程仓库，但需要执行
-$git remote add命令来手工添加
-
-6. 要添加一个新的远程仓库，可以指定一个简单的名字，以便将来引用，运行 $git remote add [shortname] [url]
-
-7. 添加远程仓库后
-
-1）$git remote可以看到新添加的远程主机标识符
-
-2）但是，$git branch 
--a依然无法显示新添加的远程主机的分支，仍然只能显示标识符为origin的远程主机的分支
-
-3）查看远程仓库的信息可以使用
-$git remote show <标识符>
-
-工作树
+工作区
 ---------
 将.git目录(本地仓库)的父目录中的内容称为“附属于该仓库的工作树”。
 
-add&commit
+.. image:: _images/git-5.png
+
+版本
 ------------
+
+提交版本
+^^^^^^^^^^^^^
 git add和git commit的实际作用是和Git的结构设计紧密相关，详见廖雪峰的工作区和暂存区
 
 .. image:: _images/git-add.png
@@ -91,10 +89,51 @@ git add和git commit的实际作用是和Git的结构设计紧密相关，详见
 1. 只是修改的文件，也需要先add，再commit,而不是可以直接commit
 2. 可以执行多个add，最后执行一个commit
 3. add和commit的操作都是针对本地git仓库的
-4. 工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
-5. Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。
-6. 暂存区是Git非常重要的概念，弄明白了暂存区，就弄明白了Git的很多操作到底干了什么。
-7. commit后“暂存区”就空了
+4. Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。
+5. commit后“暂存区”就空了
+
+commit背后的细节
+++++++++++++++++++++
+1. 一次commit就是一个版本，在版本库中形成了时间线，如下图所示：
+
+.. image:: _images/git-6.jpg
+
+2. HEAD指向当前commit的版本。
+
+3. 一个版本有两个基本属性，commit-id和commit message
+
+查看历史版本commit-id
+^^^^^^^^^^^^^^^^^^^^^^^
+
+$ git log  # 返回从HEAD指向的版本开始之前提交的版本
+
+$ git relog  # 返回所有commit提交的版本
+
+版本回退
+^^^^^^^^^^
+- $git reset --hard HEAD^
+- $git reset --hard commit-id
+
+版本回退的实际操作：
+
+1. 改变HEAD指针，如下图；
+
+.. image:: _images/git-6.png
+
+2. 更新工作区代码文件。
+
+标签
+------------
+参考链接
+^^^^^^^^^
+https://www.liaoxuefeng.com/wiki/896043488029600/900788941487552
+
+tag和commit的关系
+^^^^^^^^^^^^^^^^^^^^^^^^
+发布一个版本(commit)时，我们通常先在版本库中打一个标签（tag），标签也是版本库的一个快照。
+
+tag默认是打在HEAD指向的版本上的，当然，也可以打在指定的commit-id版本上。
+
 
 git管理的文件的状态
 ---------------------
@@ -165,6 +204,12 @@ $ git clone <版本库的网址>
 
 $git remote add
 $git fetch
+
+配置文件不受git管理
+--------------------
+1. 下载python.gitignore模板, `link <https://github.com/yiwenliu/gitignore/blob/master/Python.gitignore>`_
+2. 下载并重命名为.gitignore到.git/同级目录下
+3. 编辑.gitignore
 
 
 Q&A
