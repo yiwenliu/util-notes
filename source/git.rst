@@ -56,25 +56,22 @@ $git remote -v
 
 $git remote show <标识符>   # 查看远程仓库的信息可以使用
 
-
-
-本地仓库
---------------------
-1. 在本地提及仓库，就是指.git目录
-
-2. 依然无法显示新添加的远程主机的分支，仍然只能显示标识符为origin的远程主机的分支
-
-$git branch -a
-
-
-工作区
----------
+仓库&工作区
+-----------------
 将.git目录(本地仓库)的父目录中的内容称为“附属于该仓库的工作树”。
 
 .. image:: _images/git-5.png
 
+图解Git
+----------
+https://marklodato.github.io/visual-git-guide/index-zh-cn.html
+
 版本
 ------------
+
+版本库
+^^^^^^^^^^^^
+版本库是.git
 
 提交版本
 ^^^^^^^^^^^^^
@@ -111,16 +108,39 @@ $ git relog  # 返回所有commit提交的版本
 
 版本回退
 ^^^^^^^^^^
-- $git reset --hard HEAD^
-- $git reset --hard commit-id
+git reset
++++++++++++++++
+可以选择性的改变如下参数：
 
-版本回退的实际操作：
+- HEAD指针
+- 分支指针
+- 工作目录
+- stage（index区）
 
-1. 改变HEAD指针，如下图；
+详见https://marklodato.github.io/visual-git-guide/index-zh-cn.html#reset
 
-.. image:: _images/git-6.png
+git checkout
++++++++++++++++++++
+$git checkout <commit_id> 来切换到指定的某一次提交，改变了HEAD指针，但是，分支指针不变
 
-2. 更新工作区代码文件。
+.. image:: _images/git-10.png
+
+如此会造成HEAD指针游离。HEAD游离的弊端会在commit时体现出来，以及解决办法见https://juejin.im/post/5b2a30f96fb9a00e7a3d5724
+
+HEAD指针&分支指针
+-----------------------
+HEAD指针&分支指针是Git中非常重要的概念
+
+.. image:: _images/git-7.png
+
+- HEAD指针就是.git/HEAD文件
+
+.. image:: _images/git-8.png
+
+- 分支指针就是.git/refs/heads目录下分支同名文件，文件内容就是某个commit id
+
+$ cat develop
+caada2821ae7adfec482c8f9f0eca21c764a6425
 
 标签
 ------------
@@ -211,6 +231,43 @@ $git fetch
 2. 下载并重命名为.gitignore到.git/同级目录下
 3. 编辑.gitignore
 
+分支
+---------
+查看本地分支
+^^^^^^^^^^^^^^
+$ git branch
+
+- 当前分支前面会标一个*号
+
+查看本地和远程分支
+^^^^^^^^^^^^^^^^^^^^^
+$ git branch -a
+
+创建分支
+^^^^^^^^^^
+$ git branch dev
+
+切换到已有分支
+^^^^^^^^^^^^^^^^^^^
+$ git switch <branch_name>
+
+- 这个操作实际上，只是改变了.git/HEAD文件的内容
+
+.. image:: _images/git-9.png
+
+创建并切换分支
+^^^^^^^^^^^^^^^
+$ git switch -c dev
+
+合并
+^^^^^^
+$ git merge <name>
+
+git merge命令用于合并指定分支(dev)到当前分支。什么叫“当前分支”——应该是HEAD指向的分支
+
+删除
+^^^^^^^
+$git branch -d <name>
 
 Q&A
 ------

@@ -6,8 +6,10 @@ Cookie
 
 由上图可得，
 
-- cookie使用两个http header扩展了http。
-- cookie有server端发起
+1. cookie使用两个http header扩展了http。
+
+- server端响应中带的Set-Cookie头
+- client端请求中带的Cookie头
 
 Session
 ----------
